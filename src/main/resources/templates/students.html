@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Students</title>
+    <style>
+         body{ font-family:Arial; background:#f4f4f4; } .container{ width:90%; margin:auto; margin-top:40px; } h2{ text-align:center; margin-bottom:20px; } table{ width:100%; border-collapse:collapse; background:white; } table th, table td{ border:1px solid gray; padding:12px; text-align:center; } table th{ background:#007bff; color:white; } a{ text-decoration:none; padding:6px 12px; border-radius:4px; color:white; } .edit{ background:green; } .delete{ background:red; } .add-btn{ background:#007bff; padding:10px 15px; display:inline-block; margin-bottom:15px; }
+    </style>
+</head>
+<body>
+<div class="container"><h2>All Students</h2> <a th:href="@{/addStudent}" class="add-btn"> Add Student </a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.address}"></td>
+            <td th:text="${student.age}"></td>
+            <td th:text="${student.gender}"></td>
+            <td><a th:href="@{/edit/{id}(id=${student.id})}" class="edit"> Edit </a> <a
+                    th:href="@{/delete/{id}(id=${student.id})}" class="delete"> Delete </a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

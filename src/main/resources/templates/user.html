@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#11998e,#38ef7d);
+        }
+
+        .container{
+            width:450px;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            color:#28a745;
+            margin-bottom:15px;
+        }
+
+        p{
+            color:#555;
+            margin-bottom:30px;
+            font-size:17px;
+        }
+
+        a{
+            display:block;
+            text-decoration:none;
+            padding:14px;
+            margin-top:15px;
+            border-radius:10px;
+            color:white;
+            font-weight:bold;
+        }
+
+        .students{
+            background:#007bff;
+        }
+
+        .home{
+            background:#28a745;
+        }
+
+        .logout{
+            background:#dc3545;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Welcome USER</h1>
+
+    <p>
+        You can view and manage student records.
+    </p>
+
+    <a th:href="@{/students}"
+       class="students">
+
+        View Students
+
+    </a>
+
+    <a th:href="@{/}"
+       class="home">
+
+        Home
+
+    </a>
+
+    <a th:href="@{/logout}"
+       class="logout">
+
+        Logout
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
